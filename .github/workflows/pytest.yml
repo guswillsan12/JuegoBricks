@@ -30,7 +30,7 @@ jobs:
 
       - name: 🛠️ Generar archivo de pruebas unitarias si no existe
         run: |
-          python generate_tests.py
+          python $GITHUB_WORKSPACE/generate_tests.py
           echo "📂 Listando contenido del directorio tests/ después de la generación:"
           ls -lah tests/
       - name: 🔍 Verificar ubicación de los archivos generados
