@@ -14,7 +14,7 @@ black = pygame.Color(0, 0, 0)
 
 # Directorio base del script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-IMAGES_DIR = os.path.join(BASE_DIR, "images")  # Ruta correcta ##$$###
+IMAGES_DIR = os.path.join(BASE_DIR, "images")  # Ruta correcta
 
 # ==============================
 # 2. Función para Crear Ladrillos
