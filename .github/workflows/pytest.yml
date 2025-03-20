@@ -33,8 +33,8 @@ jobs:
           python generate_tests.py
           echo "📂 Listando contenido del directorio tests/ después de la generación:"
           ls -lah tests/
-      - name: 🔍 Buscar los archivos de prueba en todo el sistema
-        run: find . -name "test_*.py"          
+      - name: 🔍 Verificar ubicación de los archivos generados
+        run: find $GITHUB_WORKSPACE/tests -type f          
       - name: 🧪 Ejecutar pruebas unitarias con Pytest y generar HTML
         run: |
           PYTHONPATH=. pytest -v --disable-warnings --html=report.html
