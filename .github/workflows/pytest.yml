@@ -32,7 +32,7 @@ jobs:
         run: |
           python generate_tests.py
           echo "📂 Listando contenido del directorio test/ después de la generación:"
-          ls -lah test/
+          ls -lah tests/
 
       - name: 🧪 Ejecutar pruebas unitarias con Pytest y generar HTML
         run: |
