@@ -33,8 +33,18 @@ jobs:
           python $GITHUB_WORKSPACE/generate_tests.py
           echo "📂 Listando contenido del directorio tests/ después de la generación:"
           ls -lah tests/
+
       - name: 🔍 Verificar ubicación de los archivos generados
-        run: find $GITHUB_WORKSPACE/tests -type f          
+        run: find $GITHUB_WORKSPACE/tests -type f  
+
+      - name: 📤 Subir archivos generados al repositorio
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add tests/
+          git commit -m "🔧 Agregar archivos de prueba generados automáticamente"
+          git push origin main        
+
       - name: 🧪 Ejecutar pruebas unitarias con Pytest y generar HTML
         run: |
           PYTHONPATH=. pytest $GITHUB_WORKSPACE/tests/ -v --disable-warnings --html=report.html
