@@ -37,7 +37,7 @@ jobs:
         run: find $GITHUB_WORKSPACE/tests -type f          
       - name: 🧪 Ejecutar pruebas unitarias con Pytest y generar HTML
         run: |
-          PYTHONPATH=. pytest -v --disable-warnings --html=report.html
+          PYTHONPATH=. pytest $GITHUB_WORKSPACE/tests/ -v --disable-warnings --html=report.html
           echo "✅ Pruebas ejecutadas, verificando existencia de report.html"
           ls -lah
 
